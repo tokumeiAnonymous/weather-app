@@ -22,7 +22,7 @@ function displayData(main, weather, place) {
     const title = document.querySelector('.title');
     const icon = document.querySelector('.icon');
     icon.alt = weather.description;
-    icon.src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+    icon.src = `https://openweathermap.org/img/wn/${weather.icon}@2x.png`;
     title.appendChild(icon);
 
     const dataHolder = document.querySelector('.data-holder');
