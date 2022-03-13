@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
 async function getData(city) {
     try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2711b629755ddf6cc9ab2dabe29b9eb3`, { mode: 'cors' });
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2711b629755ddf6cc9ab2dabe29b9eb3`, { mode: 'cors' });
         const responseData = await response.json();
-        console.log(responseData);
+        // console.log(responseData);
         const { main } = responseData;
         const weather = responseData.weather[0];
-        const place = `${responseData.name}, ${responseData.sys.country}`
+        const place = `${responseData.name}, ${responseData.sys.country}`;
 
         return { main, weather, place };
     } catch (error) {
@@ -16,6 +16,7 @@ async function getData(city) {
 
 function displayData(main, weather, place) {
     // undefined is falsy
+    // add validity here
     if (!main) return;
 
     const title = document.querySelector('.title');

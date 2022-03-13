@@ -17,6 +17,14 @@ html {
 
 .content {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     border: 1px solid black;
+}
+
+.data-holder ul {
+    list-style-type: none;
+}
+
+.data-holder ul * {
+    margin: 0.5rem;
 }
