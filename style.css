@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    background: url(Assets/pexels-lumn-167699.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.title {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
