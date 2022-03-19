@@ -1,6 +1,6 @@
-
-## icon link
-http://openweathermap.org/img/wn/10d@{iconcode}
-
+## Weather app
+Weather app implementation that uses open weather api to provide weather datas in your chosen location.
+  
 ## credits 
-Photo by Lum3n from Pexels
+- Background-photo: Lum3n from Pexels
+- Undraw for weather svg

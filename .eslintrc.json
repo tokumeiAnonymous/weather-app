@@ -12,6 +12,8 @@
     },
     "rules": {
         "no-console": "off",
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "no-useless-return": "off",
+        "no-use-before-define": "off"
     }
 }
