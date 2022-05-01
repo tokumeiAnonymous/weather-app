@@ -67,7 +67,7 @@ function displayData(main, weather, place) {
     tempLabel.setAttribute('for', 'temp');
     data3.appendChild(tempLabel);
 
-    const temp = document.createElement('li');
+    const temp = document.createElement('div');
     temp.textContent = `${main.temp}°C`;
     temp.id = 'temp';
     temp.classList.add('data');
@@ -95,7 +95,7 @@ function displayData(main, weather, place) {
     humidityLabel.setAttribute('for', 'humidity');
     data5.appendChild(humidityLabel);
 
-    const humidity = document.createElement('li');
+    const humidity = document.createElement('div');
     humidity.textContent = `${main.humidity}%`;
     humidity.id = 'humidity';
     humidity.classList.add('data');
