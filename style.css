@@ -8,8 +8,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
     overflow: hidden;
+    height: 100vh;
+    transition: 5s ease;
 }
 
 .clouds {
@@ -26,10 +27,12 @@ body {
 
 .rain {
     background-image: url('./Assets/Sprinkle.svg');
+    transition: all 2s ease-in-out;
 }
 
 .other {
     background-image: url('./Assets/Blob\ Group.svg');
+    
 }
 
 .title {

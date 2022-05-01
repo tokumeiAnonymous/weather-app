@@ -3,7 +3,6 @@ async function getData(city) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2711b629755ddf6cc9ab2dabe29b9eb3`, { mode: 'cors' });
         const responseData = await response.json();
-        // console.log(responseData);
         const { main } = responseData;
         const weather = responseData.weather[0];
         const place = `${responseData.name}, ${responseData.sys.country}`;
@@ -107,12 +106,11 @@ function displayData(main, weather, place) {
 
 function changeBackgroundWeather(weatherDescription) {
     const body = document.querySelector('body');
-    body.removeAttribute('class');
-    if (weatherDescription.includes('clear')) body.classList.add('clear');
-    else if (weatherDescription.includes('clouds')) body.classList.add('clouds');
-    else if (weatherDescription.includes('rain')) body.classList.add('rain');
-    else if (weatherDescription.includes('snow')) body.classList.add('snow');
-    else body.classList.add('other');
+    if (weatherDescription.includes('clear')) body.style = 'background-image: url(./Assets/Circles.svg)';
+    else if (weatherDescription.includes('clouds')) body.style = 'background-image: url(./Assets/Cloudy.svg)';
+    else if (weatherDescription.includes('rain')) body.style = 'background-image: url(./Assets/Sprinkle.svg)';
+    else if (weatherDescription.includes('snow')) body.style = 'background-image: url(./Assets/Snow.svg)';
+    else body.style = 'background-image: url(./Assets/Group.svg)';
 }
 
 function capitalize(word) {
