@@ -5,16 +5,31 @@
 }
 
 body { 
-    background: url(Assets/pexels-lumn-167699.png) no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(20, 20, 20, 0.3);
-    z-index: -1;
+.clouds {
+    background-image: url('./Assets/Cloudy.svg');
+}
+
+.clear {
+    background-image: url('./Assets/Mass\ Circles.svg');
+}
+
+.snow {
+    background-image: url('./Assets/Snow.svg');
+}
+
+.rain {
+    background-image: url('./Assets/Sprinkle.svg');
+}
+
+.other {
+    background-image: url('./Assets/Blob\ Group.svg');
 }
 
 .title {
@@ -26,6 +41,7 @@ body {
 
 .content {
     display: flex;
+    justify-content: space-around;
 }
 
 .search-holder {
@@ -46,8 +62,3 @@ body {
     margin-bottom: 1rem;
     border-radius: .5rem;
 }
-/*
-.svg-holder {
-    background-color: rgba(20, 20, 20, 0.3);
-}
-*/

@@ -22,11 +22,9 @@ function displayData(main, weather, place) {
         placeNode.reportValidity();
     }
 
-    const title = document.querySelector('.title');
     const icon = document.querySelector('.icon');
     icon.alt = weather.description;
     icon.src = `https://openweathermap.org/img/wn/${weather.icon}@2x.png`;
-    title.appendChild(icon);
 
     const dataHolder = document.querySelector('.data-holder');
     dataHolder.innerHTML = '';
@@ -104,17 +102,17 @@ function displayData(main, weather, place) {
     humidity.classList.add('data');
     data5.appendChild(humidity);
 
-    changePointedWeather(weather.description);
+    changeBackgroundWeather(weather.description);
 }
 
-function changePointedWeather(weatherDescription) {
-    const signify = document.querySelector('.weather-signify');
-    console.log(signify);
-    if (weatherDescription.includes('clear')) signify.setAttribute('transform', 'translate(-373.09252, -240.5)');
-    else if (weatherDescription.includes('few')) signify.setAttribute('transform', 'translate(-148.09252, -240.5)');
-    else if (weatherDescription.includes('clouds')) signify.setAttribute('transform', 'translate(-260.59252, -240.5)');
-    else if (weatherDescription.includes('rain')) signify.setAttribute('transform', 'translate(-35.59252, -240.5)');
-    else if (weatherDescription.includes('snow')) signify.setAttribute('transform', 'translate(76.90748, -240.5)');
+function changeBackgroundWeather(weatherDescription) {
+    const body = document.querySelector('body');
+    body.removeAttribute('class');
+    if (weatherDescription.includes('clear')) body.classList.add('clear');
+    else if (weatherDescription.includes('clouds')) body.classList.add('clouds');
+    else if (weatherDescription.includes('rain')) body.classList.add('rain');
+    else if (weatherDescription.includes('snow')) body.classList.add('snow');
+    else body.classList.add('other');
 }
 
 function capitalize(word) {
@@ -140,4 +138,4 @@ searchHolder.addEventListener('keypress', (event) => {
         event.preventDefault();
         getData(place.value).then((data) => displayData(data.main, data.weather, data.place)).catch(handleError);
     }
-});
+})
