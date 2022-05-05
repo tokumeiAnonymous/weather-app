@@ -105,12 +105,12 @@ function displayData(main, weather, place) {
 }
 
 function changeBackgroundWeather(weatherDescription) {
-    const body = document.querySelector('body');
-    if (weatherDescription.includes('clear')) body.style = 'background-image: url(./Assets/Circles.svg)';
-    else if (weatherDescription.includes('clouds')) body.style = 'background-image: url(./Assets/Cloudy.svg)';
-    else if (weatherDescription.includes('rain')) body.style = 'background-image: url(./Assets/Sprinkle.svg)';
-    else if (weatherDescription.includes('snow')) body.style = 'background-image: url(./Assets/Snow.svg)';
-    else body.style = 'background-image: url(./Assets/Group.svg)';
+    const bg = document.querySelector('.background');
+    if (weatherDescription.includes('clear')) bg.src = './Assets/Circles.svg';
+    else if (weatherDescription.includes('clouds')) bg.src = './Assets/Cloudy.svg';
+    else if (weatherDescription.includes('rain')) bg.src = './Assets/Sprinkle.svg';
+    else if (weatherDescription.includes('snow')) bg.src = './Assets/Snow.svg';
+    else bg.src = './Assets/Group.svg';
 }
 
 function capitalize(word) {

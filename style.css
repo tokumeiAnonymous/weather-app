@@ -6,35 +6,25 @@
     font-weight: 600;
 }
 
-body { 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+body {
     overflow: hidden;
-    height: 100vh;
-    transition: 5s ease;
 }
 
-.clouds {
-    background-image: url('./Assets/Cloudy.svg');
+label {
+    color: rgb(150, 140, 140);
 }
 
-.clear {
-    background-image: url('./Assets/Mass\ Circles.svg');
-}
-
-.snow {
-    background-image: url('./Assets/Snow.svg');
-}
-
-.rain {
-    background-image: url('./Assets/Sprinkle.svg');
-    transition: all 2s ease-in-out;
-}
-
-.other {
-    background-image: url('./Assets/Blob\ Group.svg');
-    
+img.background {
+    position: absolute;
+    background-size: 100vh 100vw;
+    background-attachment: fixed;
+    z-index: -1;
+    object-fit: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    transition: all 5s ease;
+    overflow: hidden;
 }
 
 .title {
@@ -47,6 +37,7 @@ body {
 .content {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .search-holder {
@@ -57,6 +48,10 @@ body {
 
 .search {
     background-color: black;
+}
+
+.data-holder {
+    flex-basis: 250px;
 }
 
 .data-holder ul {
@@ -81,3 +76,15 @@ input[type="text"] {
     font-size: 1.4rem;
     border-bottom: 2px solid #f5f5f5;
   }
+
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+      :root {
+          font-size: 1.2rem;
+      }
+  }
+
+  @media only screen and (min-width: 961px) {
+    :root {
+        font-size: 2rem;
+    }
+}
